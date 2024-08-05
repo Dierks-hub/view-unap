@@ -148,6 +148,19 @@
         </div>
     </div>
 
+    <div class="container-fluid">
+        <footer class="d-flex flex-wrap justify-content-around py-3 my-5 border-top">
+            <img src="assets/images/unap_positivo.png" style="width: 170px">
+            <div class="nav row-md-3 px-5">
+                <div class="col"><h5 >Videos Tutoriales</h5></li>
+                <div class="col"><a href="#" class="nav-link px-2 text-muted">1. Introducción SAT</a></li>
+                <div class="col"><a href="#" class="nav-link px-2 text-muted">2. Seguimiento Carreras</a></li>
+                <div class="col"><a href="#" class="nav-link px-2 text-muted">3. Bitácora SAT estudiantes</a></li>
+                <div class="col"><a href="#" class="nav-link px-2 text-muted">4. Bitácora SAT docentes</a></li>
+                <div class="col"><a href="#" class="nav-link px-2 text-muted">5. Informes y filtros</a></li>
+            </div>
+        </footer>
+    </div>
 
     <!-- Offcanvas Menu -->
     <div class="offcanvas offcanvas-start bg-mi-color" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
