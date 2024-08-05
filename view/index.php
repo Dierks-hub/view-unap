@@ -16,12 +16,28 @@
     <section>
         <header>
             <nav class="navbar shadow-sm bg-light" id="navbar">
+            <div class="row w-100 align-items-center">     
+                <div class="col d-flex align-items-center justify-content-end">
+                    <img src="assets/images/foto_perfil.png" alt="Ejemplo" style="width: 100px;">
+                    <div>
+                    <h5 class="px-3 mb-0">Jaime David Guszman Rojas</h5>
+                    <h6 class="px-3 mb-0">Administrador</h6>
+                    </div>
+                </div>
+            </div>
+            </nav>
+        </header>
+    </section>
+    <div class="container mt-4" id="container-main">
+        <!-- Primera y segunda fila combinadas -->
+        <div class="row mb-4">
+        <div class="card text-center mb-3">
+            <div class="card-body">
                 <div class="row w-100 align-items-center">
                     <div class="col d-flex justify-content-start px-4">
                         <div class="btn-group me-2" role="group" aria-label="Basic example">
                             <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked>
                             <label class="btn btn-outline-primary" for="success-outlined">Estudiante</label>
-
                             <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
                             <label class="btn btn-outline-primary" for="danger-outlined">Docente</label>
                         </div>
@@ -31,16 +47,9 @@
                         </div>
                         <button class="btn btn-primary me-2">Buscar</button>
                     </div>
-                    <div class="col d-flex justify-content-end">
-                        <h6 class="px-3 mb-0">Jaime David Guszman Rojas</h6>
-                    </div>
                 </div>
-            </nav>
-        </header>
-    </section>
-    <div class="container mt-4" id="container-main">
-        <!-- Primera y segunda fila combinadas -->
-        <div class="row mb-4">
+            </div>
+        </div>
             <div class="col-md-6">
                 <div class="card shadow-sm h-100">
                     <h5 class="card-header">
@@ -115,7 +124,7 @@
         <div class="offcanvas-body">
             <div class="d-grid gap-2">
                 <a href="index.php" class="btn btn-offcanvas btn-sm d-flex align-items-center" type="button">
-                    <i class="bi bi-file-text me-2" style="font-size: 1.5rem;"></i> Bitacora
+                    <i class="bi bi-file-text me-2" style="font-size: 1.5rem;" ></i> Bitacora
                 </a>
                 <a href="filters.php" class="btn btn-offcanvas btn-sm d-flex align-items-center" type="button">
                     <i class="bi bi-file-text me-2" style="font-size: 1.5rem;"></i> Informes y filtros
@@ -135,6 +144,10 @@
             </div>
         </div>
     </div>
+
+    <footer>
+        
+    </footer>
 </body>
 
 
