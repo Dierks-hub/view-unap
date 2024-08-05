@@ -17,22 +17,18 @@
         <header>
             <nav class="navbar shadow-sm bg-light" id="navbar">
                 <div class="row w-100 align-items-center">
-                    <!-- Contenedor de los botones y barra de separación -->
                     <div class="col d-flex align-items-center justify-content-start px-4">
                         <button class="btn btn-light me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
                             <i class="bi bi-layout-sidebar-inset"></i>
                         </button>
                     </div>
-                    <!-- Información de la persona -->
                     <div class="col d-flex align-items-center justify-content-end">
-                        <!-- Barra vertical de separación -->
-                        <!-- Contenedor de los botones -->
                         <div class="d-flex align-items-center">
                             <button class="btn btn-light me-2">
-                                <i class="bi bi-bell"></i> <!-- Icono de la campanita de mensaje -->
+                                <i class="bi bi-bell"></i>
                             </button>
                             <button class="btn btn-light">
-                                <i class="bi bi-moon"></i> <!-- Icono del toggle de modo oscuro -->
+                                <i class="bi bi-moon"></i>
                             </button>
                         </div>
                         <div class="vr mx-2"></div>
@@ -49,7 +45,6 @@
 
     </section>
     <div class="container mt-3" id="container-main">
-        <!-- Primera y segunda fila combinadas -->
         <div class="row">
             <div class="col d-flex justify-content-center">
                 <div class="card shadow-sm mb-2 w-50">
@@ -102,20 +97,31 @@
             <div class="col-md-3">
                 <div class="card shadow-sm mb-4">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
+                        <h5 class="card-title">Obtencion de datos:</h5>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Campo 1</span>
+                            <input type="number" class="form-control" aria-label="Valor del campo 1" id="campo1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Campo 2</span>
+                            <input type="number" class="form-control" aria-label="Valor del campo 2" id="campo2">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Campo 3</span>
+                            <input type="number" class="form-control" aria-label="Valor del campo 3" id="campo3">
+                        </div>
+                        <button class="btn btn-primary" type="button" id="ingresar">Ingresar Valores</button>
                     </div>
                 </div>
                 <div class="card shadow-sm">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
+                        <h5 class="card-title">Resultados:</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Suma de Campo 1 y 2:</h6>
+                        <p class="card-text" id='resultado1'></p>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Suma de Campo 1, 2 y 3:</h6>
+                        <p class="card-text" id='resultado2'></p>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Campo 3 es par o impar:</h6>
+                        <p class="card-text" id='resultado3'></p>
                     </div>
                 </div>
             </div>
@@ -177,6 +183,30 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script>
+    $('#ingresar').click(function() {
+        $.ajax({
+            url: "resp.php",
+            type: "POST",
+            dataType: "json",
+            data: {
+                var0: 'respuestaPrueba',
+                var1: $("#campo1").val(),
+                var2: $("#campo2").val(),
+                var3: $("#campo3").val()
+            },
+            success: function(resultado, status) {
+                $("#resultado1").html(resultado.resp1);
+                $("#resultado2").html(resultado.resp2);
+                $("#resultado3").html(resultado.resp3);
+            },
+
+            error: function(objeto, texterror) {
+                alert("ERROR: Paso lo siguiente-> " + texterror);
+            }
+        })
+    });
+</script>
 </body>
 
 </html>
