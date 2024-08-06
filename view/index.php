@@ -1,3 +1,6 @@
+<?php
+include_once("layouts/offcanvas.html");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,24 +15,19 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
+<body class="bg-light" data-bs-theme="light">
     <section>
         <header>
-            <nav class="navbar shadow-sm bg-light" id="navbar">
+            <nav class="navbar shadow-sm bg-body-secondary" id="navbar">
                 <div class="row w-100 align-items-center">
                     <div class="col d-flex align-items-center justify-content-start px-4">
-                        <button class="btn btn-light me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
-                            <i class="bi bi-layout-sidebar-inset"></i>
-                        </button>
+                        <i class="bi bi-layout-sidebar-inset me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"></i>
                     </div>
                     <div class="col d-flex align-items-center justify-content-end">
                         <div class="d-flex align-items-center">
-                            <button class="btn btn-light me-2">
-                                <i class="bi bi-bell"></i>
-                            </button>
-                            <button class="btn btn-light">
-                                <i class="bi bi-moon"></i>
-                            </button>
+                            <i type="button" class="bi bi-gear px-3"></i>
+                            <i type="button" class="bi bi-bell px-3"></i>
+                            <i type="button" onclick="cambiarTema()" id="dl-icon" class="bi bi-moon px-3"></i>
                         </div>
                         <div class="vr mx-2"></div>
                         <img src="assets/images/foto_perfil.png" alt="Ejemplo" style="width: 50px;">
@@ -40,9 +38,7 @@
                     </div>
                 </div>
             </nav>
-
         </header>
-
     </section>
     <div class="container mt-3" id="container-main">
         <div class="row">
@@ -55,7 +51,6 @@
                                     <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked>
                                     <label class="btn btn-outline-primary w-50" for="success-outlined"><i class="fas fa-user-graduate"></i>
                                     </label>
-
                                     <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
                                     <label class="btn btn-outline-primary w-50" for="danger-outlined"><i class="fas fa-chalkboard-teacher"></i>
                                     </label>
@@ -72,7 +67,7 @@
                 </div>
             </div>
         </div>
-        <div class=" row mb-4 mt-1">
+        <div class="row mb-4 mt-1">
             <div class="col-md-6">
                 <div class="card shadow-sm h-100">
                     <h5 class="card-header">
@@ -148,41 +143,33 @@
         </div>
     </div>
 
-
-    <!-- Offcanvas Menu -->
-    <div class="offcanvas offcanvas-start bg-mi-color" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">logo</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <div class="d-grid gap-2">
-                <a href="index.php" class="btn btn-offcanvas btn-sm d-flex align-items-center" type="button">
-                    <i class="bi bi-file-text me-2" style="font-size: 1.5rem;"></i> Bitacora
-                </a>
-                <a href="filters.php" class="btn btn-offcanvas btn-sm d-flex align-items-center" type="button">
-                    <i class="bi bi-file-text me-2" style="font-size: 1.5rem;"></i> Informes y filtros
-                </a>
-                <button class="btn btn-offcanvas btn-sm d-flex align-items-center" type="button">
-                    <i class="bi bi-graph-up me-2" style="font-size: 1.5rem;"></i> Seguimiento carreras
-                </button>
-                <button class="btn btn-offcanvas btn-sm d-flex align-items-center" type="button">
-                    <i class="bi bi-mortarboard me-2" style="font-size: 1.5rem;"></i> Seguimiento asignaturas
-                </button>
-                <button class="btn btn-offcanvas btn-sm d-flex align-items-center" type="button">
-                    <i class="bi bi-journal-text me-2" style="font-size: 1.5rem;"></i> Seguimiento áreas P.A.
-                </button>
-                <button class="btn btn-offcanvas btn-sm d-flex align-items-center" type="button">
-                    <i class="bi bi-person-lines-fill me-2" style="font-size: 1.5rem;"></i> Contacto estudiante
-                </button>
+    <footer class="bg-body-secondary mt-3" id="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 d-flex align-items-center">
+                    <div class="logo">Logo</div>
+                </div>
+                <div class="col-lg-4">
+                </div>
+                <div class="col-lg-4 d-flex flex-column align-items-end">
+                    <h5 class="mb-3 px-5">Videos Tutoriales</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">1. Introducción SAT</a></li>
+                        <li><a href="#">2. Seguimiento de carreras</a></li>
+                        <li><a href="#">3. Bitácora SAT estudiantes</a></li>
+                        <li><a href="#">4. Bitácora SAT docentes</a></li>
+                        <li><a href="#">5. Informes y filtros</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
+    </footer>
 </body>
 
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script src="assets/js/darkMode.js"></script>
 <script>
     $('#ingresar').click(function() {
         $.ajax({
