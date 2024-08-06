@@ -16,7 +16,7 @@ const temaClaro = () => {
     document.querySelector("#footer").classList.replace("bg-dark", "bg-body-secondary");
 
     const icono = document.querySelector("#dl-icon");
-    icono.classList.remove("bi-sun");
+    icono.classList.remove("bi-sun");gi 
     icono.classList.add("bi-moon");
 }
 
